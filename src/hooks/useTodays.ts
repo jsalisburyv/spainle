@@ -4,8 +4,7 @@ import seedrandom from "seedrandom";
 import { townsWithImage, Town } from "../domain/towns";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
-const forcedTowns: Record<string, string> = {
-};
+const forcedTowns: Record<string, string> = {};
 
 export function getDayString(shiftDayCount?: number) {
   return DateTime.now()

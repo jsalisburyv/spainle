@@ -2,11 +2,7 @@ import { t } from "i18next";
 import React, { useState } from "react";
 import Autosuggest from "react-autosuggest";
 import { useTranslation } from "react-i18next";
-import {
-  towns,
-  getTownName,
-  sanitizeTownName,
-} from "../domain/towns";
+import { towns, getTownName, sanitizeTownName } from "../domain/towns";
 
 interface CountryInputProps {
   inputRef: React.RefObject<HTMLInputElement>;
@@ -31,9 +27,7 @@ export function CountryInput({
           towns
             .map((t) => getTownName(t).toUpperCase())
             .filter((countryName) =>
-              sanitizeTownName(countryName).includes(
-                sanitizeTownName(value)
-              )
+              sanitizeTownName(countryName).includes(sanitizeTownName(value))
             )
         )
       }

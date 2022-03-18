@@ -21,8 +21,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>Cada intent ha de ser un poble vàlid de Mallorca...</div>
         <div>
-          Després de cada intent, tendràs la distància, la direcció i la proximitat
-          desde entre el teu intent i el poble.
+          Després de cada intent, tendràs la distància, la direcció i la{" "}
+          proximitat desde entre el teu intent i el poble.
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
@@ -40,9 +40,10 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            El teu intent <span className="uppercase font-bold">Vilafranca de Bonany</span> és a{" "}
-            {formatDistance(53000, settingsData.distanceUnit)} del poble a endevinar, està
-            en direcció Oest i tens una proximitat del 41%.
+            El teu intent{" "}
+            <span className="uppercase font-bold">Vilafranca de Bonany</span>és{" "}
+            a {formatDistance(53000, settingsData.distanceUnit)} del poble a{" "}
+            endevinar, està en direcció Oest i tens una proximitat del 41%.
           </div>
         </div>
         <div>
@@ -59,9 +60,9 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             El teu segon intent{" "}
-            <span className="uppercase font-bold">Esporles</span> és més aprop
-             {formatDistance(9000, settingsData.distanceUnit)} enfora,
-            a l'Oest direction and 94%!
+            <span className="uppercase font-bold">Esporles</span> és més aprop{" "}
+            {formatDistance(9000, settingsData.distanceUnit)} enfora, a{" "}
+            l&apos;Oest i 94%!
           </div>
         </div>
         <div>
@@ -77,8 +78,9 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            El següent intent, <span className="uppercase font-bold">Estellencs</span>,
-            és el poble a esbrinar! Enhorabona!{" "}
+            El següent intent,{" "}
+            <span className="uppercase font-bold">Estellencs</span> és el poble{" "}
+            a esbrinar! Enhorabona!{" "}
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
@@ -87,7 +89,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         Un nou <Worldle /> estarà disponible cada dia!
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <Worldle /> està <span className="font-bold">fortament</span> inspirat per{" "}
+        <Worldle /> està <span className="font-bold">fortament</span> inspirat{" "}
+        per
         <a
           className="underline"
           href="https://worldle.teuteuf.fr/"
@@ -96,7 +99,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         >
           Worldle
         </a>{" "}
-        fet per {" "}
+        fet per{" "}
         <a
           className="underline"
           href="https://twitter.com/teuteuf"

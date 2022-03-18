@@ -7,11 +7,7 @@ import React, {
   useState,
 } from "react";
 import { toast } from "react-toastify";
-import {
-  towns,
-  getTownName,
-  sanitizeTownName,
-} from "../domain/towns";
+import { towns, getTownName, sanitizeTownName } from "../domain/towns";
 import { CountryInput } from "./TownInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
@@ -65,9 +61,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
       e.preventDefault();
       const guessedTown = towns.find(
         (town) =>
-          sanitizeTownName(
-            getTownName(town)
-          ) === sanitizeTownName(currentGuess)
+          sanitizeTownName(getTownName(town)) === sanitizeTownName(currentGuess)
       );
 
       if (guessedTown == null) {
@@ -93,7 +87,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         toast.success(t("welldone"), { delay: 2000 });
       }
     },
-    [addGuess, town, currentGuess, i18n.resolvedLanguage, t]
+    [addGuess, town, currentGuess, t]
   );
 
   useEffect(() => {
@@ -104,13 +98,10 @@ export function Game({ settingsData, updateSettings }: GameProps) {
       guesses.length === MAX_TRY_COUNT &&
       guesses[guesses.length - 1].distance > 0
     ) {
-      toastId = toast.info(
-        getTownName(town).toUpperCase(),
-        {
-          autoClose: false,
-          delay: 2000,
-        }
-      );
+      toastId = toast.info(getTownName(town).toUpperCase(), {
+        autoClose: false,
+        delay: 2000,
+      });
     }
 
     return () => {

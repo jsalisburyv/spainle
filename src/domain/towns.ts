@@ -3,57 +3,57 @@
 // Countries images => https://github.com/djaiss/mapsicon
 
 const townCodesWithImage = [
-  'al',
-  'ac',
-  'ag',
-  'an',
-  'ar',
-  'at',
-  'ba',
-  'bi',
-  'bu',
-  'bn',
-  'ca',
-  'cm',
-  'cp',
-  'cd',
-  'co',
-  'cs',
-  'es',
-  'ep',
-  'et',
-  'fe',
-  'fo',
-  'in',
-  'lo',
-  'ls',
-  'lb',
-  'lc',
-  'ma',
-  'mn',
-  'mr',
-  'mt',
-  'mo',
-  'mu',
-  'pa',
-  'pe',
-  'po',
-  'pl',
-  'pr',
-  'pu',
-  'ss',
-  'sj',
-  'sl',
-  'se',
-  'sm',
-  'sr',
-  'sa',
-  'se',
-  'sn',
-  'so',
-  'ss',
-  'va',
-  'vi'
+  "al",
+  "ac",
+  "ag",
+  "an",
+  "ar",
+  "at",
+  "ba",
+  "bi",
+  "bu",
+  "bn",
+  "ca",
+  "cm",
+  "cp",
+  "cd",
+  "co",
+  "cs",
+  "es",
+  "ep",
+  "et",
+  "fe",
+  "fo",
+  "in",
+  "lo",
+  "ls",
+  "lb",
+  "lc",
+  "ma",
+  "mn",
+  "mr",
+  "mt",
+  "mo",
+  "mu",
+  "pa",
+  "pe",
+  "po",
+  "pl",
+  "pr",
+  "pu",
+  "ss",
+  "sj",
+  "sl",
+  "se",
+  "sm",
+  "sr",
+  "sa",
+  "se",
+  "sn",
+  "so",
+  "ss",
+  "va",
+  "vi",
 ];
 
 export interface Town {
@@ -65,322 +65,323 @@ export interface Town {
 
 export const towns: Town[] = [
   {
-    code: 'AL',
+    code: "AL",
     latitude: 39.706667,
     longitude: 2.790833,
-    name: 'Alaró'
+    name: "Alaró",
   },
   {
-    code: 'AC',
+    code: "AC",
     latitude: 39.8525,
     longitude: 3.1192,
-    name: 'Alcúdia'
+    name: "Alcúdia",
   },
   {
-    code: 'AG',
+    code: "AG",
     latitude: 39.5592,
     longitude: 2.8947,
-    name: 'Algaida'
+    name: "Algaida",
   },
   {
-    code: 'AN',
+    code: "AN",
     latitude: 39.5746,
     longitude: 2.42055,
-    name: 'Andratx'
+    name: "Andratx",
   },
   {
-    code: 'AR',
+    code: "AR",
     latitude: 39.649444,
     longitude: 3.110833,
-    name: 'Ariany'
+    name: "Ariany",
   },
   {
-    code: 'AT',
+    code: "AT",
     latitude: 39.695026,
     longitude: 3.351157,
-    name: 'Artà'
+    name: "Artà",
   },
   {
-    code: 'BA',
+    code: "BA",
     latitude: 39.6875,
     longitude: 2.5148,
-    name: 'Banyalbufar'
+    name: "Banyalbufar",
   },
   {
-    code: 'BI',
+    code: "BI",
     latitude: 39.6831,
     longitude: 2.8333,
-    name: 'Binissalem'
+    name: "Binissalem",
   },
   {
-    code: 'BU',
+    code: "BU",
     latitude: 39.7591,
-    longitude: 2.9856, name: 'Búger'
+    longitude: 2.9856,
+    name: "Búger",
   },
   {
-    code: 'BN',
+    code: "BN",
     latitude: 39.696667,
     longitude: 2.699722,
-    name: 'Bunyola'
+    name: "Bunyola",
   },
   {
-    code: 'CA',
+    code: "CA",
     latitude: 39.56667,
     longitude: 2.51667,
-    name: 'Calvià'
+    name: "Calvià",
   },
   {
-    code: 'CM',
+    code: "CM",
     latitude: 39.76667,
     longitude: 2.96667,
-    name: 'Campanet'
+    name: "Campanet",
   },
   {
-    code: 'CP',
+    code: "CP",
     latitude: 39.43056,
     longitude: 3.01944,
-    name: 'Campos'
+    name: "Campos",
   },
   {
-    code: 'CD',
+    code: "CD",
     latitude: 39.7,
     longitude: 3.43333,
-    name: 'Capdepera'
+    name: "Capdepera",
   },
   {
-    code: 'CO',
+    code: "CO",
     latitude: 39.66908,
     longitude: 2.81216,
-    name: 'Consell'
+    name: "Consell",
   },
   {
-    code: 'CS',
+    code: "CS",
     latitude: 39.6575,
     longitude: 2.95,
-    name: 'Costitx'
+    name: "Costitx",
   },
   {
-    code: 'DE',
+    code: "DE",
     latitude: 39.75,
     longitude: 2.633056,
-    name: 'Deià',
+    name: "Deià",
   },
   {
-    code: 'ES',
+    code: "ES",
     latitude: 39.8265,
     longitude: 2.8471,
-    name: 'Escorca'
+    name: "Escorca",
   },
   {
-    code: 'EP',
+    code: "EP",
     latitude: 39.66623,
     longitude: 2.5799,
-    name: 'Esporles'
+    name: "Esporles",
   },
   {
-    code: 'ET',
+    code: "ET",
     latitude: 39.6535,
     longitude: 2.481,
-    name: 'Estellencs'
+    name: "Estellencs",
   },
   {
-    code: 'FE',
+    code: "FE",
     latitude: 39.4692,
     longitude: 3.1481,
-    name: 'Felanitx'
+    name: "Felanitx",
   },
   {
-    code: 'FO',
+    code: "FO",
     latitude: 39.7827,
     longitude: 2.7409,
-    name: 'Fornalutx'
+    name: "Fornalutx",
   },
   {
-    code: 'IN',
+    code: "IN",
     latitude: 39.716667,
     longitude: 2.916667,
-    name: 'Inca'
+    name: "Inca",
   },
   {
-    code: 'LO',
+    code: "LO",
     latitude: 39.6179,
     longitude: 2.9752,
-    name: 'Lloret de Vistalegre'
+    name: "Lloret de Vistalegre",
   },
   {
-    code: 'LS',
+    code: "LS",
     latitude: 39.71792,
     longitude: 2.86666,
-    name: 'Lloseta'
+    name: "Lloseta",
   },
   {
-    code: 'LB',
+    code: "LB",
     latitude: 39.69913,
     longitude: 3.00493,
-    name: 'Llubí'
+    name: "Llubí",
   },
   {
-    code: 'LC',
+    code: "LC",
     latitude: 39.49003,
     longitude: 2.88983,
-    name: 'Llucmajor'
+    name: "Llucmajor",
   },
   {
-    code: 'MA',
+    code: "MA",
     latitude: 39.57,
     longitude: 3.208889,
-    name: 'Manacor'
+    name: "Manacor",
   },
   {
-    code: 'MN',
+    code: "MN",
     latitude: 39.7501,
     longitude: 2.871,
-    name: 'Mancor de la Vall'
+    name: "Mancor de la Vall",
   },
   {
-    code: 'MR',
+    code: "MR",
     latitude: 39.66455,
     longitude: 3.07467,
-    name: 'Maria de la Salut'
+    name: "Maria de la Salut",
   },
   {
-    code: 'MT',
+    code: "MT",
     latitude: 39.64215,
     longitude: 2.75268,
-    name: 'Marratxí'
+    name: "Marratxí",
   },
   {
-    code: 'MO',
+    code: "MO",
     latitude: 39.56997,
     longitude: 2.98412,
-    name: 'Montuïri'
+    name: "Montuïri",
   },
   {
-    code: 'MU',
+    code: "MU",
     latitude: 39.73445,
     longitude: 3.05544,
-    name: 'Muro'
+    name: "Muro",
   },
   {
-    code: 'PA',
+    code: "PA",
     latitude: 39.5667,
     longitude: 2.6497,
-    name: 'Palma'
+    name: "Palma",
   },
   {
-    code: 'PE',
+    code: "PE",
     latitude: 39.61422,
     longitude: 3.11181,
-    name: 'Petra'
+    name: "Petra",
   },
   {
-    code: 'PO',
+    code: "PO",
     latitude: 39.76929,
     longitude: 3.02253,
-    name: 'Sa Pobla'
+    name: "Sa Pobla",
   },
   {
-    code: 'PL',
+    code: "PL",
     latitude: 39.8772,
     longitude: 3.01643,
-    name: 'Pollença'
+    name: "Pollença",
   },
   {
-    code: 'PR',
+    code: "PR",
     latitude: 39.51437,
     longitude: 3.02373,
-    name: 'Porreres'
+    name: "Porreres",
   },
   {
-    code: 'PU',
+    code: "PU",
     latitude: 39.62262,
     longitude: 2.52746,
-    name: 'Puigpunyent'
+    name: "Puigpunyent",
   },
   {
-    code: 'SS',
+    code: "SS",
     latitude: 39.3386,
     longitude: 3.0536,
-    name: 'Ses Salines'
+    name: "Ses Salines",
   },
   {
-    code: 'SJ',
+    code: "SJ",
     latitude: 39.59431,
     longitude: 3.04012,
-    name: 'Sant Joan'
+    name: "Sant Joan",
   },
   {
-    code: 'SL',
+    code: "SL",
     latitude: 39.60899,
     longitude: 3.28525,
-    name: 'Sant Llorenç des Cardassar'
+    name: "Sant Llorenç des Cardassar",
   },
   {
-    code: 'SU',
+    code: "SU",
     latitude: 39.62367,
     longitude: 2.83919,
-    name: 'Santa Eugènia'
+    name: "Santa Eugènia",
   },
   {
-    code: 'SM',
+    code: "SM",
     latitude: 39.703333,
     longitude: 3.103611,
-    name: 'Santa Margalida'
+    name: "Santa Margalida",
   },
   {
-    code: 'SR',
+    code: "SR",
     latitude: 39.65111,
     longitude: 2.77306,
-    name: 'Santa Maria del Camí'
+    name: "Santa Maria del Camí",
   },
   {
-    code: 'SA',
+    code: "SA",
     latitude: 39.354167,
     longitude: 3.128333,
-    name: 'Santanyí'
+    name: "Santanyí",
   },
   {
-    code: 'SE',
+    code: "SE",
     latitude: 39.7545,
     longitude: 2.9007,
-    name: 'Selva'
+    name: "Selva",
   },
   {
-    code: 'SN',
+    code: "SN",
     latitude: 39.6431,
     longitude: 3.0116,
-    name: 'Sencelles',
+    name: "Sencelles",
   },
   {
-    code: 'SI',
+    code: "SI",
     latitude: 39.6431,
     longitude: 3.0116,
-    name: 'Sineu'
+    name: "Sineu",
   },
   {
-    code: 'SO',
+    code: "SO",
     latitude: 39.766667,
     longitude: 2.7,
-    name: 'Sóller'
+    name: "Sóller",
   },
   {
-    code: 'SV',
+    code: "SV",
     latitude: 39.620833,
     longitude: 3.36,
-    name: 'Son Servera'
+    name: "Son Servera",
   },
   {
-    code: 'VA',
+    code: "VA",
     latitude: 39.711678,
     longitude: 2.622581,
-    name: 'Valldemossa'
+    name: "Valldemossa",
   },
   {
-    code: 'VI',
+    code: "VI",
     latitude: 39.5699,
     longitude: 3.08802,
-    name: 'Vilafranca de Bonany'
-  }
+    name: "Vilafranca de Bonany",
+  },
 ];
 
 export const townsWithImage = towns.filter((t) =>
@@ -395,6 +396,6 @@ export function sanitizeTownName(townName: string): string {
   return townName
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[- '()]/g, "")
+    .replace(/[- "()]/g, "")
     .toLowerCase();
 }

@@ -19,11 +19,7 @@ interface GuessRowProps {
   townInputRef?: React.RefObject<HTMLInputElement>;
 }
 
-export function GuessRow({
-  guess,
-  settingsData,
-  townInputRef,
-}: GuessRowProps) {
+export function GuessRow({ guess, settingsData, townInputRef }: GuessRowProps) {
   const { distanceUnit, theme } = settingsData;
   const proximity = guess != null ? computeProximityPercent(guess.distance) : 0;
   const squares = generateSquareCharacters(proximity, theme);
