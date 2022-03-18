@@ -1,12 +1,10 @@
 import { DateTime } from "luxon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import seedrandom from "seedrandom";
-import { countriesWithImage, Country } from "../domain/countries";
+import { townsWithImage, Town } from "../domain/towns";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
-const forcedCountries: Record<string, string> = {
-  "2022-02-02": "TD",
-  "2022-02-03": "PY",
+const forcedTowns: Record<string, string> = {
 };
 
 export function getDayString(shiftDayCount?: number) {
@@ -17,7 +15,7 @@ export function getDayString(shiftDayCount?: number) {
 
 export function useTodays(dayString: string): [
   {
-    country?: Country;
+    town?: Town;
     guesses: Guess[];
   },
   (guess: Guess) => void,
@@ -25,7 +23,7 @@ export function useTodays(dayString: string): [
   number
 ] {
   const [todays, setTodays] = useState<{
-    country?: Country;
+    town?: Town;
     guesses: Guess[];
   }>({ guesses: [] });
 
@@ -37,7 +35,7 @@ export function useTodays(dayString: string): [
 
       const newGuesses = [...todays.guesses, newGuess];
 
-      setTodays((prev) => ({ country: prev.country, guesses: newGuesses }));
+      setTodays((prev) => ({ town: prev.town, guesses: newGuesses }));
       saveGuesses(dayString, newGuesses);
     },
     [dayString, todays]
@@ -45,9 +43,9 @@ export function useTodays(dayString: string): [
 
   useEffect(() => {
     const guesses = loadAllGuesses()[dayString] ?? [];
-    const country = getCountry(dayString);
+    const town = getTown(dayString);
 
-    setTodays({ country, guesses });
+    setTodays({ town, guesses });
   }, [dayString]);
 
   const randomAngle = useMemo(
@@ -64,17 +62,17 @@ export function useTodays(dayString: string): [
   return [todays, addGuess, randomAngle, imageScale];
 }
 
-function getCountry(dayString: string) {
-  const forcedCountryCode = forcedCountries[dayString];
-  const forcedCountry =
-    forcedCountryCode != null
-      ? countriesWithImage.find((country) => country.code === forcedCountryCode)
+function getTown(dayString: string) {
+  const forcedTownCode = forcedTowns[dayString];
+  const forcedTown =
+    forcedTownCode != null
+      ? townsWithImage.find((town) => town.code === forcedTownCode)
       : undefined;
 
   return (
-    forcedCountry ??
-    countriesWithImage[
-      Math.floor(seedrandom.alea(dayString)() * countriesWithImage.length)
+    forcedTown ??
+    townsWithImage[
+      Math.floor(Math.random() * townsWithImage.length)
     ]
   );
 }

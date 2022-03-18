@@ -14,15 +14,12 @@ import { InstallButton } from "./components/InstallButton";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { getDayString, useTodays } from "./hooks/useTodays";
 
-const supportLink: Record<string, string> = {
-  UA: "https://donate.redcrossredcrescent.org/ua/donate/~my-donation?_cv=1",
-};
 
 function App() {
   const { t, i18n } = useTranslation();
 
   const dayString = useMemo(getDayString, []);
-  const [{ country }] = useTodays(dayString);
+  const [{ town }] = useTodays(dayString);
 
   const { pwaInstall, supported, isInstalled } = useReactPWAInstall();
 
@@ -88,7 +85,7 @@ function App() {
               <InstallButton pwaInstall={pwaInstall} />
             )}
             <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-              Wor<span className="text-green-600">l</span>dle
+              Pob<span className="text-green-600">le</span>
             </h1>
             <button
               className="ml-3 text-xl"
@@ -112,30 +109,6 @@ function App() {
               className="flex items-center justify-center mr-1"
             />{" "}
             <Worldle />? -
-            {country && supportLink[country.code] != null ? (
-              <a
-                className="underline pl-1"
-                href={supportLink[country.code]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-max">{t(`support.${country.code}`)}</div>
-              </a>
-            ) : (
-              <a
-                className="underline pl-1"
-                href="https://www.ko-fi.com/teuteuf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-max">
-                  <Twemoji
-                    text={t("buyMeACoffee")}
-                    options={{ className: "inline-block" }}
-                  />
-                </div>
-              </a>
-            )}
           </footer>
         </div>
       </div>

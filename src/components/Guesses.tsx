@@ -7,14 +7,14 @@ interface GuessesProps {
   rowCount: number;
   guesses: Guess[];
   settingsData: SettingsData;
-  countryInputRef?: React.RefObject<HTMLInputElement>;
+  townInputRef?: React.RefObject<HTMLInputElement>;
 }
 
 export function Guesses({
   rowCount,
   guesses,
   settingsData,
-  countryInputRef,
+  townInputRef,
 }: GuessesProps) {
   return (
     <div>
@@ -24,7 +24,7 @@ export function Guesses({
             key={index}
             guess={guesses[index]}
             settingsData={settingsData}
-            countryInputRef={countryInputRef}
+            townInputRef={townInputRef}
           />
         ))}
       </div>

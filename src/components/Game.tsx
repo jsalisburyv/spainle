@@ -8,11 +8,11 @@ import React, {
 } from "react";
 import { toast } from "react-toastify";
 import {
-  countries,
-  getCountryName,
-  sanitizeCountryName,
-} from "../domain/countries";
-import { CountryInput } from "./CountryInput";
+  towns,
+  getTownName,
+  sanitizeTownName,
+} from "../domain/towns";
+import { CountryInput } from "./TownInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
 import { Guesses } from "./Guesses";
@@ -22,7 +22,7 @@ import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 
-const MAX_TRY_COUNT = 6;
+const MAX_TRY_COUNT = 4;
 
 interface GameProps {
   settingsData: SettingsData;
@@ -36,10 +36,10 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     [settingsData.shiftDayCount]
   );
 
-  const countryInputRef = useRef<HTMLInputElement>(null);
+  const townInputRef = useRef<HTMLInputElement>(null);
 
   const [todays, addGuess, randomAngle, imageScale] = useTodays(dayString);
-  const { country, guesses } = todays;
+  const { town, guesses } = todays;
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [hideImageMode, setHideImageMode] = useMode(
@@ -59,28 +59,28 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
-      if (country == null) {
+      if (town == null) {
         return;
       }
       e.preventDefault();
-      const guessedCountry = countries.find(
-        (country) =>
-          sanitizeCountryName(
-            getCountryName(i18n.resolvedLanguage, country)
-          ) === sanitizeCountryName(currentGuess)
+      const guessedTown = towns.find(
+        (town) =>
+          sanitizeTownName(
+            getTownName(town)
+          ) === sanitizeTownName(currentGuess)
       );
 
-      if (guessedCountry == null) {
-        toast.error(t("unknownCountry"));
+      if (guessedTown == null) {
+        toast.error(t("unknownTown"));
         return;
       }
 
       const newGuess = {
         name: currentGuess,
-        distance: geolib.getDistance(guessedCountry, country),
+        distance: geolib.getDistance(guessedTown, town),
         direction: geolib.getCompassDirection(
-          guessedCountry,
-          country,
+          guessedTown,
+          town,
           (origin, dest) =>
             Math.round(geolib.getRhumbLineBearing(origin, dest) / 45) * 45
         ),
@@ -93,19 +93,19 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         toast.success(t("welldone"), { delay: 2000 });
       }
     },
-    [addGuess, country, currentGuess, i18n.resolvedLanguage, t]
+    [addGuess, town, currentGuess, i18n.resolvedLanguage, t]
   );
 
   useEffect(() => {
     let toastId: ReactText;
-    const { country, guesses } = todays;
+    const { town, guesses } = todays;
     if (
-      country &&
+      town &&
       guesses.length === MAX_TRY_COUNT &&
       guesses[guesses.length - 1].distance > 0
     ) {
       toastId = toast.info(
-        getCountryName(i18n.resolvedLanguage, country).toUpperCase(),
+        getTownName(town).toUpperCase(),
         {
           autoClose: false,
           delay: 2000,
@@ -129,7 +129,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           onClick={() => setHideImageMode(false)}
         >
           <Twemoji
-            text={t("showCountry")}
+            text={t("showTown")}
             options={{ className: "inline-block" }}
           />
         </button>
@@ -151,8 +151,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in dark:invert ${
             hideImageMode && !gameEnded ? "h-0" : "h-full"
           }`}
-          alt="country to guess"
-          src={`images/countries/${country?.code.toLowerCase()}/vector.svg`}
+          alt="town to guess"
+          src={`images/towns/${town?.code.toLowerCase()}/vector.svg`}
           style={
             rotationMode && !gameEnded
               ? {
@@ -190,10 +190,10 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         rowCount={MAX_TRY_COUNT}
         guesses={guesses}
         settingsData={settingsData}
-        countryInputRef={countryInputRef}
+        townInputRef={townInputRef}
       />
       <div className="my-2">
-        {gameEnded && country ? (
+        {gameEnded && town ? (
           <>
             <Share
               guesses={guesses}
@@ -204,10 +204,9 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             />
             <a
               className="underline w-full text-center block mt-4"
-              href={`https://www.google.com/maps?q=${getCountryName(
-                i18n.resolvedLanguage,
-                country
-              )}+${country.code.toUpperCase()}&hl=${i18n.resolvedLanguage}`}
+              href={`https://www.google.com/maps?q=${getTownName(
+                town
+              )}+Mallorca&hl=${i18n.resolvedLanguage}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -221,7 +220,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col">
               <CountryInput
-                inputRef={countryInputRef}
+                inputRef={townInputRef}
                 currentGuess={currentGuess}
                 setCurrentGuess={setCurrentGuess}
               />
