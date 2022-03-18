@@ -14,37 +14,35 @@ interface InfosProps {
 
 export function Infos({ isOpen, close, settingsData }: InfosProps) {
   return (
-    <Panel title="How to play" isOpen={isOpen} close={close}>
+    <Panel title="Com jugar" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Guess the <Worldle /> in 6 guesses.
+          Endevina <Worldle /> en 4 intents.
         </div>
-        <div>Each guess must be a valid country, territory, ...</div>
+        <div>Cada intent ha de ser un poble vàlid de Mallorca...</div>
         <div>
-          After each guess, you will have the distance, the direction and the
-          proximity from your guess and the target country.
+          Després de cada intent, tendràs la distància, la direcció i la proximitat
+          desde entre el teu intent i el poble.
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <div className="font-bold">Examples</div>
+        <div className="font-bold">Exemples</div>
         <div>
           <Guesses
             rowCount={1}
             guesses={[
               {
-                name: "Chile",
-                direction: "NE",
-                distance: 13_557_000,
+                name: "Vilafranca de Bonany",
+                direction: "W",
+                distance: 53_000,
               },
             ]}
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your guess <span className="uppercase font-bold">Chile</span> is{" "}
-            {formatDistance(13557000, settingsData.distanceUnit)} away from the
-            target country, the target country is in the North-East direction
-            and you have a only 32% of proximity because it&apos;s quite far
-            away!
+            El teu intent <span className="uppercase font-bold">Vilafranca de Bonany</span> és a{" "}
+            {formatDistance(53000, settingsData.distanceUnit)} del poble a endevinar, està
+            en direcció Oest i tens una proximitat del 41%.
           </div>
         </div>
         <div>
@@ -52,18 +50,18 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Finland",
-                direction: "SE",
-                distance: 3_206_000,
+                name: "Esporles",
+                direction: "W",
+                distance: 9_000,
               },
             ]}
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your second guess{" "}
-            <span className="uppercase font-bold">Finland</span> is getting
-            closer! {formatDistance(3206000, settingsData.distanceUnit)} away,
-            South-East direction and 84%!
+            El teu segon intent{" "}
+            <span className="uppercase font-bold">Esporles</span> és més aprop
+             {formatDistance(9000, settingsData.distanceUnit)} enfora,
+            a l'Oest direction and 94%!
           </div>
         </div>
         <div>
@@ -71,7 +69,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Lebanon",
+                name: "Estellencs",
                 direction: "N",
                 distance: 0,
               },
@@ -79,87 +77,57 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Next guess, <span className="uppercase font-bold">Lebanon</span>,
-            it&apos;s the country to guess! Congrats!{" "}
+            El següent intent, <span className="uppercase font-bold">Estellencs</span>,
+            és el poble a esbrinar! Enhorabona!{" "}
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
-        A new <Worldle /> will be available every day!
+        Un nou <Worldle /> estarà disponible cada dia!
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <div className="font-bold">Any question or suggestion?</div>
-        <div>
-          Check the{" "}
-          <a
-            className="underline"
-            href="https://worldle.notion.site/Worldle-b84ab0f002e34866980a4d47cf9291b7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Worldle FAQ
-          </a>
-          !
-        </div>
-      </div>
-      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <Worldle /> has been <span className="font-bold">heavily</span> inspired
-        by{" "}
+        <Worldle /> està <span className="font-bold">fortament</span> inspirat per{" "}
         <a
           className="underline"
-          href="https://www.powerlanguage.co.uk/wordle/"
+          href="https://worldle.teuteuf.fr/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Wordle
+          Worldle
         </a>{" "}
-        created by{" "}
+        fet per {" "}
         <a
           className="underline"
-          href="https://twitter.com/powerlanguish"
+          href="https://twitter.com/teuteuf"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Josh Wardle (@powerlanguish)
+          teuteuf (@teuteuf)
         </a>
         .
       </div>
       <div className="space-y-3 text-justify pb-3">
         <div>
-          Made by{" "}
+          Fet per{" "}
           <a
             className="underline"
-            href="https://twitter.com/teuteuf"
+            href="https://twitter.com/joanfont"
             target="_blank"
             rel="noopener noreferrer"
           >
-            @teuteuf
+            @joanfont
           </a>{" "}
           - (
           <a
             className="underline"
-            href="https://github.com/teuteuf/worldle/"
+            href="https://github.com/joanfont/poble/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            source code
+            codi font
           </a>
           )
-        </div>
-        <div>
-          Want to support?{" "}
-          <a
-            className="underline"
-            href="https://www.ko-fi.com/teuteuf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Twemoji
-              text="Buy me a coffee! ☕"
-              options={{ className: "inline-block" }}
-            />
-          </a>
         </div>
       </div>
     </Panel>

@@ -47,19 +47,11 @@ function App() {
         autoClose={2000}
         bodyClassName="font-bold text-center"
       />
-      {i18n.resolvedLanguage === "fr" ? (
-        <InfosFr
-          isOpen={infoOpen}
-          close={() => setInfoOpen(false)}
-          settingsData={settingsData}
-        />
-      ) : (
-        <Infos
-          isOpen={infoOpen}
-          close={() => setInfoOpen(false)}
-          settingsData={settingsData}
-        />
-      )}
+      <Infos
+        isOpen={infoOpen}
+        close={() => setInfoOpen(false)}
+        settingsData={settingsData}
+      />
       <Settings
         isOpen={settingsOpen}
         close={() => setSettingsOpen(false)}
@@ -108,7 +100,7 @@ function App() {
               text="❤️"
               className="flex items-center justify-center mr-1"
             />{" "}
-            <Worldle />? -
+            <Worldle />
           </footer>
         </div>
       </div>

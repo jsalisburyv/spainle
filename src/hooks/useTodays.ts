@@ -72,7 +72,7 @@ function getTown(dayString: string) {
   return (
     forcedTown ??
     townsWithImage[
-      Math.floor(Math.random() * townsWithImage.length)
+      Math.floor(seedrandom.alea(dayString)() * townsWithImage.length)
     ]
   );
 }
