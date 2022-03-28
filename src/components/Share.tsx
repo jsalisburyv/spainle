@@ -60,7 +60,7 @@ export function Share({
       })
       .join("\n");
 
-    return [title, guessString, "https://poble.joanfont.cat"].join("\n");
+    return [title, guessString, "", "https://poble.joanfont.cat"].join("\n");
   }, [dayString, guesses, hideImageMode, rotationMode, theme]);
 
   return (

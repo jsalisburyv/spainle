@@ -62,7 +62,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             El teu segon intent{" "}
             <span className="uppercase font-bold">Esporles</span> és més aprop{" "}
             {formatDistance(9000, settingsData.distanceUnit)} enfora, a{" "}
-            l&apos;Oest i 94%!
+            l&apos;oest i 94%!
           </div>
         </div>
         <div>
