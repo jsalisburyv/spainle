@@ -4,6 +4,8 @@ import seedrandom from "seedrandom";
 import { townsWithImage, Town } from "../domain/towns";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
+const startDay = "2020-05-03";
+
 const forcedTowns: Record<string, string> = {};
 
 export function getDayString(shiftDayCount?: number) {
@@ -68,10 +70,21 @@ function getTown(dayString: string) {
       ? townsWithImage.find((town) => town.code === forcedTownCode)
       : undefined;
 
-  return (
-    forcedTown ??
-    townsWithImage[
+  if (forcedTown) {
+    return forcedTown;
+  }
+
+  const initialDay = DateTime.fromISO(startDay);
+  const today = DateTime.fromISO(dayString);
+
+  if (initialDay <= today) {
+    return townsWithImage[
       Math.floor(seedrandom.alea(dayString)() * townsWithImage.length)
-    ]
-  );
+    ];
+  }
+
+  const diff = today.diff(initialDay, "days");
+  const townOffset = diff.days % townsWithImage.length;
+
+  return townsWithImage[townOffset];
 }
