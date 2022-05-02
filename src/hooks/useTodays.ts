@@ -4,7 +4,7 @@ import seedrandom from "seedrandom";
 import { townsWithImage, Town } from "../domain/towns";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
-const startDay = "2020-05-03";
+const startDay = "2022-05-03";
 
 const forcedTowns: Record<string, string> = {};
 
