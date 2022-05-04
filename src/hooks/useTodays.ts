@@ -77,7 +77,7 @@ function getTown(dayString: string) {
   const initialDay = DateTime.fromISO(startDay);
   const today = DateTime.fromISO(dayString);
 
-  if (today < startDay) {
+  if (today < initialDay) {
     return townsWithImage[
       Math.floor(seedrandom.alea(dayString)() * townsWithImage.length)
     ];
