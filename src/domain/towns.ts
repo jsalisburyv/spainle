@@ -65,12 +65,6 @@ export interface Town {
 
 export const towns: Town[] = [
   {
-    code: "EP",
-    latitude: 39.66623,
-    longitude: 2.5799,
-    name: "Esporles",
-  },
-  {
     code: "AR",
     latitude: 39.649444,
     longitude: 3.110833,
@@ -381,6 +375,12 @@ export const towns: Town[] = [
     latitude: 39.56667,
     longitude: 2.51667,
     name: "Calvià",
+  },
+  {
+    code: "EP",
+    latitude: 39.66623,
+    longitude: 2.5799,
+    name: "Esporles",
   },
 ];
 

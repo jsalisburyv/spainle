@@ -4,7 +4,7 @@ import seedrandom from "seedrandom";
 import { townsWithImage, Town } from "../domain/towns";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
-const startDay = "2022-05-03";
+const startDay = "2022-05-05";
 
 const forcedTowns: Record<string, string> = {};
 
@@ -77,7 +77,7 @@ function getTown(dayString: string) {
   const initialDay = DateTime.fromISO(startDay);
   const today = DateTime.fromISO(dayString);
 
-  if (initialDay < today) {
+  if (today < startDay) {
     return townsWithImage[
       Math.floor(seedrandom.alea(dayString)() * townsWithImage.length)
     ];
