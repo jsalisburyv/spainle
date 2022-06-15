@@ -51,7 +51,7 @@ const townCodesWithImage = [
   "se",
   "sn",
   "so",
-  "sv",
+  "ss",
   "va",
   "vi",
 ];
