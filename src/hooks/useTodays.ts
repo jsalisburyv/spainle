@@ -6,7 +6,9 @@ import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
 const startDay = "2022-05-05";
 
-const forcedTowns: Record<string, string> = {};
+const forcedTowns: Record<string, string> = {
+  "2022-08-15": "DE",
+};
 
 export function getDayString(shiftDayCount?: number) {
   return DateTime.now()
