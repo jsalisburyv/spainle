@@ -3,6 +3,7 @@
 // Countries images => https://github.com/djaiss/mapsicon
 
 const townCodesWithImage = [
+  "de",
   "al",
   "ac",
   "ag",
