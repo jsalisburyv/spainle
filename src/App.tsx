@@ -10,7 +10,7 @@ import { Worldle } from "./components/Worldle";
 import { Stats } from "./components/panels/Stats";
 import { useReactPWAInstall } from "@teuteuf/react-pwa-install";
 import { InstallButton } from "./components/InstallButton";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { MyEmoji } from "./components/Emoji";
 import { getDayString, useTodays } from "./hooks/useTodays";
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
               type="button"
               onClick={() => setInfoOpen(true)}
             >
-              <Twemoji text="❓" />
+              <MyEmoji text="❓" />
             </button>
             {supported() && !isInstalled() && (
               <InstallButton pwaInstall={pwaInstall} />
@@ -82,19 +82,19 @@ function App() {
               type="button"
               onClick={() => setStatsOpen(true)}
             >
-              <Twemoji text="📈" />
+              <MyEmoji text="📈" />
             </button>
             <button
               className="ml-3 text-xl"
               type="button"
               onClick={() => setSettingsOpen(true)}
             >
-              <Twemoji text="⚙️" />
+              <MyEmoji text="⚙️" />
             </button>
           </header>
           <Game settingsData={settingsData} updateSettings={updateSettings} />
           <footer className="flex justify-center items-center text-sm mt-8 mb-1">
-            <Twemoji
+            <MyEmoji
               text="❤️"
               className="flex items-center justify-center mr-1"
             />{" "}

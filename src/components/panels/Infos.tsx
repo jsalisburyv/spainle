@@ -4,7 +4,7 @@ import React from "react";
 import { Worldle } from "../Worldle";
 import { formatDistance } from "../../domain/geography";
 import { SettingsData } from "../../hooks/useSettings";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { MyEmoji } from "../Emoji";
 
 interface InfosProps {
   isOpen: boolean;
@@ -81,7 +81,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             El següent intent,{" "}
             <span className="uppercase font-bold">Estellencs</span> és el poble{" "}
             a esbrinar! Enhorabona!{" "}
-            <Twemoji text="🎉" options={{ className: "inline-block" }} />
+            <MyEmoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
       </div>

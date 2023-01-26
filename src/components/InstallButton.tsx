@@ -1,5 +1,5 @@
 import React from "react";
-import { Twemoji } from "@teuteuf/react-emoji-render";
+import { MyEmoji } from "./Emoji";
 import { useTranslation } from "react-i18next";
 
 interface InstallButtonProps {
@@ -58,7 +58,7 @@ export function InstallButton({ pwaInstall }: InstallButtonProps) {
         })
       }
     >
-      <Twemoji text="📲" />
+      <MyEmoji text="📲" />
     </button>
   );
 }
