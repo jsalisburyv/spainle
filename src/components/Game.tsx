@@ -20,7 +20,7 @@ function getDayString() {
   return DateTime.now().toFormat("yyyy-MM-dd");
 }
 
-const MAX_TRY_COUNT = 6;
+const MAX_TRY_COUNT = 5;
 
 interface GameProps {
   settingsData: SettingsData;
@@ -163,10 +163,10 @@ export function Game({ settingsData }: GameProps) {
                 setCurrentGuess={setCurrentGuess}
               />
               <button
-                className="border-2 uppercase my-0.5 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
+                className="rounded font-bold border-2 uppercase my-1 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
                 type="submit"
               >
-                🌍 {t("guess")}
+                🌍 {t("Adivina")}
               </button>
             </div>
           </form>
