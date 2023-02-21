@@ -44,7 +44,7 @@ export function Share({
       : rotationMode
       ? " 🌀"
       : "";
-    const title = `#Worldle #${dayCount} ${guessCount}/6${difficultyModifierEmoji}`;
+    const title = `#Spainle #${dayCount} ${guessCount}/5${difficultyModifierEmoji}`;
 
     const guessString = guesses
       .map((guess) => {
@@ -53,7 +53,7 @@ export function Share({
       })
       .join("\n");
 
-    return [title, guessString, "https://worldle.teuteuf.fr"].join("\n");
+    return [title, guessString, "https://spainle.vercel.app/"].join("\n");
   }, [dayString, guesses, hideImageMode, rotationMode, theme]);
 
   return (
